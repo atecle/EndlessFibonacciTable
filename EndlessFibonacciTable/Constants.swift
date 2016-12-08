@@ -9,4 +9,5 @@
 struct Constants {
 
     static let LoadingCellIdentifier = "LoadingCell"
+    static let DefaultCellIdentifier = "DefaultCell"
 }
