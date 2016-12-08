@@ -13,6 +13,8 @@
 		66F357281DFA1D9D005AAB50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66F357271DFA1D9D005AAB50 /* Assets.xcassets */; };
 		66F3572B1DFA1D9D005AAB50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66F357291DFA1D9D005AAB50 /* LaunchScreen.storyboard */; };
 		66F357361DFA1D9D005AAB50 /* EndlessFibonacciTableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F357351DFA1D9D005AAB50 /* EndlessFibonacciTableTests.swift */; };
+		66F357411DFA1EDA005AAB50 /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F357401DFA1EDA005AAB50 /* LoadingCell.swift */; };
+		66F357431DFA2048005AAB50 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F357421DFA2048005AAB50 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		66F357311DFA1D9D005AAB50 /* EndlessFibonacciTableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EndlessFibonacciTableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		66F357351DFA1D9D005AAB50 /* EndlessFibonacciTableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndlessFibonacciTableTests.swift; sourceTree = "<group>"; };
 		66F357371DFA1D9D005AAB50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66F357401DFA1EDA005AAB50 /* LoadingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
+		66F357421DFA2048005AAB50 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,8 @@
 				66F357271DFA1D9D005AAB50 /* Assets.xcassets */,
 				66F357291DFA1D9D005AAB50 /* LaunchScreen.storyboard */,
 				66F3572C1DFA1D9D005AAB50 /* Info.plist */,
+				66F357401DFA1EDA005AAB50 /* LoadingCell.swift */,
+				66F357421DFA2048005AAB50 /* Constants.swift */,
 			);
 			path = EndlessFibonacciTable;
 			sourceTree = "<group>";
@@ -201,8 +207,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66F357411DFA1EDA005AAB50 /* LoadingCell.swift in Sources */,
 				66F357231DFA1D9D005AAB50 /* ViewController.swift in Sources */,
 				66F357211DFA1D9D005AAB50 /* AppDelegate.swift in Sources */,
+				66F357431DFA2048005AAB50 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
