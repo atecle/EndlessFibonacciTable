@@ -11,7 +11,6 @@ import UIKit
 class ViewController: UIViewController {
 
     fileprivate var data: [Int] = [0, 1]
-    fileprivate var indexOfLastFibNumberCalculated = 1
     fileprivate var isRetrievingNumbers = false
     
     @IBOutlet weak var tableView: UITableView!
@@ -33,7 +32,11 @@ class ViewController: UIViewController {
     private func configureTableView() {
         tableView.register(LoadingCell.self, forCellReuseIdentifier: Constants.LoadingCellIdentifier)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constants.LoadingCellIdentifier)
+        tableView.dataSource = self
+        tableView.delegate = self
     }
+    
+    // MARK: - Data
     
     fileprivate func loadData() {
         
@@ -46,12 +49,26 @@ class ViewController: UIViewController {
         isRetrievingNumbers = true
     }
     
-    // MARK: - Data
-    
-    private func retrieveNextFibonacciNumbers(_ completion: ((_ seq: [Int]) -> ())) {
+    private func retrieveNextFibonacciNumbers(_ completion: ((_ seq: [Int]) -> ())?) {
+        
+        // Gets 12 digits at a time
+        
+        let first = data[data.count - 1] + data[data.count - 2]
+        let second = first + data[data.count - 1]
+        var seq = [first, second]
+        
+        var i = 0
+        while i < 10 {
+            let next = seq[seq.count - 1] + seq[seq.count - 2]
+            seq.append(next)
+            i += 1
+        }
+        
+        DispatchQueue.main.async {
+            completion?(seq)
+        }
         
     }
-    
 }
 
 extension ViewController: UITableViewDelegate {
@@ -82,7 +99,7 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? 1 : 1
+        return section == 0 ? data.count : 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -91,11 +108,12 @@ extension ViewController: UITableViewDataSource {
             
             guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.DefaultCellIdentifier) else {
                 let cell = UITableViewCell()
-                //configure cell
+                cell.textLabel?.text = "\(data[indexPath.row])"
                 return cell
             }
             
-            //configure cell
+            cell.textLabel?.text = "\(data[indexPath.row])"
+
             return cell
         } else {
             
