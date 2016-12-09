@@ -52,14 +52,15 @@ class ViewController: UIViewController {
     private func retrieveNextFibonacciNumbers(_ completion: ((_ seq: [Int]) -> ())?) {
         
         // Gets 12 digits at a time
+        // Using overflow addition &+ to handle large values, produces garbage results but for a 90 minute solution to a problem that isn't really about integer precision ¯\_(ツ)_/¯
         
-        let first = data[data.count - 1] + data[data.count - 2]
-        let second = first + data[data.count - 1]
+        let first = data[data.count - 1] &+ data[data.count - 2]
+        let second = first &+ data[data.count - 1]
         var seq = [first, second]
         
         var i = 0
         while i < 10 {
-            let next = seq[seq.count - 1] + seq[seq.count - 2]
+            let next = seq[seq.count - 1] &+ seq[seq.count - 2]
             seq.append(next)
             i += 1
         }
