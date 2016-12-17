@@ -34,9 +34,9 @@ class LoadingCell: UITableViewCell {
         contentView.addSubview(activityIndicator)
         
         let top = NSLayoutConstraint(item: activityIndicator, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1, constant: 0)
-        let bottom = NSLayoutConstraint(item: activityIndicator, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1, constant: 0)
-        let leading = NSLayoutConstraint(item: activityIndicator, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1, constant: 0)
-        let trailing = NSLayoutConstraint(item: activityIndicator, attribute: .top, relatedBy: .equal, toItem: contentView, attribute: .top, multiplier: 1, constant: 0)
+        let bottom = NSLayoutConstraint(item: activityIndicator, attribute: .bottom, relatedBy: .equal, toItem: contentView, attribute: .bottom, multiplier: 1, constant: 0)
+        let leading = NSLayoutConstraint(item: activityIndicator, attribute: .leading, relatedBy: .equal, toItem: contentView, attribute: .leading, multiplier: 1, constant: 0)
+        let trailing = NSLayoutConstraint(item: activityIndicator, attribute: .trailing, relatedBy: .equal, toItem: contentView, attribute: .trailing, multiplier: 1, constant: 0)
         
         contentView.addConstraints([top, bottom, leading, trailing])
     }
